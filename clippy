@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+cargo fmt --verbose --all -- --check
+cargo clippy --verbose --all-features --all-targets -- -D warnings

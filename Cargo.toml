@@ -1,0 +1,19 @@
+[package]
+name = "backend-example"
+version = "0.8.0"
+description = "Backend server"
+authors = ["Victor Soto <vsoto26@gmail.com>"]
+edition = "2021"
+repository = "https://github.com/vsotog/backend-example"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = { version = "4", features = ["openssl"] }
+actix-cors = "0.6"
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+config = "0.13"
+log = "0.4"
+parking_lot = "0.12"
+serde = { version = "1", features = ["derive"] }
+serde-humanize-rs = "0.1"
