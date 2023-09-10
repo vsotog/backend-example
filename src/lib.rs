@@ -7,6 +7,7 @@ use anyhow::Result;
 
 pub mod api;
 pub mod config;
+pub mod domain;
 
 #[derive(Clone)]
 pub struct Backend {
