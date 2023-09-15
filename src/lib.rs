@@ -11,12 +11,12 @@ pub mod domain;
 
 #[derive(Clone)]
 pub struct Backend {
-    _config: config::Config,
+    config: config::Config,
 }
 
 impl Backend {
     pub fn new(config: config::Config) -> Self {
-        Self { _config: config }
+        Self { config: config }
     }
 }
 

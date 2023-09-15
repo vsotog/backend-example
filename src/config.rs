@@ -1,5 +1,6 @@
 use anyhow::Result;
-use std::fmt;
+use std::{fmt, collections::HashMap};
+use crate::domain::user::User;
 
 #[derive(Clone, serde::Deserialize)]
 pub struct Config {
@@ -9,6 +10,7 @@ pub struct Config {
 #[derive(Debug, Clone, serde::Deserialize)]
 pub struct Application {
     pub listen_address: String,
+    pub dev_users: Option<HashMap<String, User>>,
 }
 
 impl Config {
@@ -28,8 +30,10 @@ impl fmt::Display for Config {
             "\
 Configuration
 Bind address:                      {bind_address}
+Dev users:  	                   {users}
 ",
             bind_address = self.application.listen_address,
+            users = serde_json::to_string(&self.application.dev_users).unwrap()
         )
     }
 }

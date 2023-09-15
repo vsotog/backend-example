@@ -1,9 +1,11 @@
 use actix_web::web;
 
 mod health;
-mod kiosk;
+mod sessions;
 
 pub fn config_routes(cfg: &mut web::ServiceConfig) {
-    cfg.service(web::scope("/health").configure(health::config_routes)).service(web::scope("/kiosk").configure(kiosk::config_routes));
+    health::config_routes(cfg);
+    sessions::config_routes(cfg);
+    
     
 }
